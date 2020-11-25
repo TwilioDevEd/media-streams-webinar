@@ -18,8 +18,8 @@
 - [ ] Dialogflow
 - [ ] `<Connect>` Synchronous
 
-### Realtime Sentiment Analysis 🤗  😦
+### Realtime Sentiment Analysis 🤗 😦
 
 - [ ] Sentiment Analysis
-- [ ] Transcriptions+
+- [ ] Transcriptions++
 - [ ] Tracks
