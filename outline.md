@@ -9,14 +9,14 @@
 
 ### Talkin' Cedric 🤖
 
-- [ ] Realtime Transcriptions
-- [ ] `<Start>` Asynchronous
+- [ ] Realtime transcriptions
+- [ ] `<Start>` is asynchronous
 
-### COVID-19 Rapid Response bot 😷
+### Translator 🗣️
 
-- [ ] Virtual Assistants
-- [ ] Dialogflow
-- [ ] `<Connect>` Synchronous
+- [ ] Real-time translations
+- [ ] `<Connect>` is synchronous
+- [ ] Use `<Parameter>`s to pass values
 
 ### Realtime Sentiment Analysis 🤗 😦
 
