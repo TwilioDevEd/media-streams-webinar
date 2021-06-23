@@ -13,6 +13,23 @@ expressWebSocket(app, null, {
   perMessageDeflate: false,
 });
 
+app.post("/twiml", (req, res) => {
+  const ngrokDomain = "cdennis";
+  res.type("xml");
+  res.send(`
+    <Response>
+      <Start>
+        <Stream url="wss://${ngrokDomain}.ngrok.io/audio" />
+      </Start>
+    <Say>Begin speaking and Cedric will repeat what you say</Say>
+    <!-- This required pause is so the call doesn't complete when it 
+        runs out of instructions 
+    -->
+    <Pause length="120" />
+  </Response>
+  `);
+});
+
 app.ws("/audio", (ws, req) => {
   let client;
   try {
