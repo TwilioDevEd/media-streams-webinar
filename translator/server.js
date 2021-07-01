@@ -40,7 +40,7 @@ app.post("/twiml", (req, res) => {
       <Response>
         <Say>Translating to ${value.name}</Say>
         <Connect>
-          <Stream url="wss://cdennis.ngrok.io/audio">
+          <Stream url="wss://${process.env.SERVER_HOSTNAME}/audio">
             <Parameter name="translateTo" value="${value.language}" />
           </Stream>
         </Connect>
