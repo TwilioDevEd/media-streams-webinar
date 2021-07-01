@@ -14,12 +14,11 @@ expressWebSocket(app, null, {
 });
 
 app.post("/twiml", (req, res) => {
-  const ngrokDomain = "cdennis";
   res.type("xml");
   res.send(`
     <Response>
       <Start>
-        <Stream url="wss://${ngrokDomain}.ngrok.io/audio" />
+        <Stream url="wss://${process.env.SERVER_HOSTNAME}/audio" />
       </Start>
     <Say>Begin speaking and Cedric will repeat what you say</Say>
     <!-- This required pause is so the call doesn't complete when it 
@@ -92,4 +91,5 @@ app.ws("/audio", (ws, req) => {
 
 const listener = app.listen(PORT, () => {
   console.log("Your app is listening on port " + listener.address().port);
+  console.log(`Server hostname from .env: ${process.env.SERVER_HOSTNAME}`);
 });

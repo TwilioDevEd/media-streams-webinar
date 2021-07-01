@@ -18,7 +18,7 @@ app.post("/twiml", (req, res) => {
   twiml
     .start()
     .stream({
-      url: "wss://cdennis.ngrok.io/audio",
+      url: `wss://${process.env.SERVER_HOSTNAME}/audio`,
       track: "both_tracks"
     });
   twiml.dial(process.env.OUTBOUND_NUMBER);
@@ -81,4 +81,5 @@ app.ws("/audio", (ws, req) => {
 
 const listener = app.listen(PORT, () => {
   console.log("Your app is listening on port " + listener.address().port);
+  console.log(`Server hostname from .env: ${process.env.SERVER_HOSTNAME}`);
 });

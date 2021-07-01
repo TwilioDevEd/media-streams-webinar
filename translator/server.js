@@ -17,7 +17,7 @@ expressWebSocket(app, null, {
 
 const languages = [	
   { language: "ja-JP", name: "Japanese" },
-  { language: "es-US", name: "Spanish" },
+  { language: "es-MX", name: "Spanish" },
 ];
 
 app.post("/twiml", (req, res) => {
@@ -29,7 +29,7 @@ app.post("/twiml", (req, res) => {
     );
     twiml = `
     <Response>
-      <Gather action="/twiml" numDigits="1">
+      <Gather numDigits="1">
         <Say>${options.join(" ")}</Say>
       </Gather>
     </Response>
@@ -104,4 +104,4 @@ app.ws("/audio", (ws, req) => {
 
 const listener = app.listen(PORT, () => {
   console.log("Your app is listening on port " + listener.address().port);
-});
+  console.log(`Server hostname from .env: ${process.env.SERVER_HOSTNAME}`);});

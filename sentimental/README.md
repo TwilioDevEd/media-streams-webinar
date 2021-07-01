@@ -23,6 +23,8 @@ To run locally you'll need to open a port on your machine, so that Twilio can co
 ngrok http 3000
 ```
 
+Update your .env file to contain your ngrok URL
+
 Set your incoming number to point to your ngrok url (or use the [Twilio Console](https://www.twilio.com/console/phone-numbers/incoming) to update your incoming number)
 
 ```bash
