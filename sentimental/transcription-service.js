@@ -16,6 +16,12 @@ class TranscriptionService extends EventEmitter {
     super();
     this.stream = null;
     this.refreshStream = true;
+    // And make sure we refresh it every 60 seconds
+    this.refreshTimeout = setTimeout(() => {
+      console.log("Marking stream");
+      this.refreshStream = true;
+    }, 60000);
+    
   }
 
   send(payload) {
@@ -25,6 +31,7 @@ class TranscriptionService extends EventEmitter {
   close() {
     if (this.stream) {
       this.stream.destroy();
+      clearTimeout(this.refreshTimeout);
     }
   }
 
@@ -53,11 +60,6 @@ class TranscriptionService extends EventEmitter {
           }
         });
       this.refreshStream = false;
-      // And make sure we refresh it every 60 seconds
-      this.refreshTimeout = setTimeout(() => {
-        console.log("Marking stream");
-        this.refreshStream = true;
-      }, 60000);
     }
     return this.stream;
   }
