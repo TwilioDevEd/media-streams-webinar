@@ -27,7 +27,7 @@ Run `cp .env.example .env` to create a `.env` file with the needed environment v
 
 Update your `.env` file to contain your ngrok URL and the other needed variables. 
 
-**Note:** `NODE_ENV` is set to `development` by default.
+**Note:** `NODE_ENV` is set to `production` by default.
 
 Set your incoming number to point to your ngrok url (or use the [Twilio Console](https://www.twilio.com/console/phone-numbers/incoming) to update your incoming number)
 
