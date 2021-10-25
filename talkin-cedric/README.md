@@ -21,7 +21,7 @@ Run `cp .env.example .env` to create a `.env` file with the needed environment v
 
 Update your `.env` file to contain your ngrok URL and the other needed variables. 
 
-**Note:** `NODE_ENV` is set to `development` by default.
+**Note:** `NODE_ENV` is set to `production` by default.
 
 To run locally you'll need to open a port on your machine, so that Twilio can communicate. You can do this using [ngrok](https://ngrok.io).
 
