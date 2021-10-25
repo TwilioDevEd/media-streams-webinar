@@ -23,7 +23,11 @@ To run locally you'll need to open a port on your machine, so that Twilio can co
 ngrok http 3000
 ```
 
-Update your .env file to contain your ngrok URL
+Run `cp .env.example .env` to create a `.env` file with the needed environment variables.
+
+Update your `.env` file to contain your ngrok URL and the other needed variables. 
+
+**Note:** `NODE_ENV` is set to `production` by default.
 
 Set your incoming number to point to your ngrok url (or use the [Twilio Console](https://www.twilio.com/console/phone-numbers/incoming) to update your incoming number)
 

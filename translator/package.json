@@ -4,6 +4,7 @@
   "description": "Translates a phone call to a language",
   "main": "server.js",
   "scripts": {
+    "start": "node -r dotenv/config server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Craig Dennis",
